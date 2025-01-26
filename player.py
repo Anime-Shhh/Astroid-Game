@@ -25,7 +25,6 @@ class Player(CircleShape):
 
     def update(self, dt):
         keys = pygame.key.get_pressed()
-        mouse = pygame.mouse.get_rel()
 
         if keys[pygame.K_a]:
             self.rotate(-(dt))
@@ -35,8 +34,6 @@ class Player(CircleShape):
             self.move(dt)
         if keys[pygame.K_s]:
             self.move(-(dt))
-        if mouse.count():
-            pass
 
     def move(self, dt):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
